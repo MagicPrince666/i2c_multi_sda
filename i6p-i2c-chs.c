@@ -389,7 +389,7 @@ static int i2c_gpio_remove(struct platform_device *pdev)
 
 #if defined(CONFIG_OF)
 static const struct of_device_id i2c_gpio_dt_ids[] = {
-	{ .compatible = "i2c-gpio", },
+	{ .compatible = "i6p-i2c-ch1", },
 	{ /* sentinel */ }
 };
 
@@ -398,7 +398,7 @@ MODULE_DEVICE_TABLE(of, i2c_gpio_dt_ids);
 
 static struct platform_driver i2c_gpio_driver = {
 	.driver		= {
-		.name	= "i2c-gpio",
+		.name	= "i6p-i2c-ch1",
 		.of_match_table	= of_match_ptr(i2c_gpio_dt_ids),
 	},
 	.probe		= i2c_gpio_probe,
@@ -411,7 +411,7 @@ static int __init i2c_gpio_init(void)
 
 	ret = platform_driver_register(&i2c_gpio_driver);
 	if (ret)
-		printk(KERN_ERR "i2c-gpio: probe failed: %d\n", ret);
+		printk(KERN_ERR "i6p-i2c-ch1: probe failed: %d\n", ret);
 
 	return ret;
 }
@@ -423,7 +423,7 @@ static void __exit i2c_gpio_exit(void)
 }
 module_exit(i2c_gpio_exit);
 
-MODULE_AUTHOR("Haavard Skinnemoen (Atmel)");
+MODULE_AUTHOR("Leo Huang (Cputools)");
 MODULE_DESCRIPTION("Platform-independent bitbanging I2C driver");
 MODULE_LICENSE("GPL");
-MODULE_ALIAS("platform:i2c-gpio");
+MODULE_ALIAS("platform:i6p-i2c-ch1");

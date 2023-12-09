@@ -1,6 +1,6 @@
 .tmp_versions/
 *.ko
-.i2c*
+.i6p*
 *.o
 *.mod.o
 *.mod.c
