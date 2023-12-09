@@ -1,0 +1,9 @@
+.tmp_versions/
+*.ko
+.i2c*
+*.o
+*.mod.o
+*.mod.c
+*.symvers
+*.bak
+*.order
